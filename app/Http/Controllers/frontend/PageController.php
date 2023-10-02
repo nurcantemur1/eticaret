@@ -22,4 +22,10 @@ class PageController extends Controller
     public function thankyou(){
         return view('frontend.pages.thankyou');
     }
+    public function cart(){
+        return view('frontend.pages.cart');
+    }
+    public function checkout(){
+        return view('frontend.pages.checkout');
+    }
 }
