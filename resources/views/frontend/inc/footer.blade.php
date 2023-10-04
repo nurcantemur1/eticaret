@@ -8,24 +8,18 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <ul class="list-unstyled">
-                <li><a href="#">Sell online</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Shopping cart</a></li>
-                <li><a href="#">Store builder</a></li>
+
+                <li> <a href={{ route('Home') }}>Home</a></li>
+                <li><a href={{ route('products') }}>Products</a></li>
+                <li><a href={{ route('about') }}>About</a></li>
+                <li><a href={{ route('contact') }}>Contact</a></li>
               </ul>
             </div>
             <div class="col-md-6 col-lg-4">
               <ul class="list-unstyled">
-                <li><a href="#">Mobile commerce</a></li>
-                <li><a href="#">Dropshipping</a></li>
-                <li><a href="#">Website development</a></li>
-              </ul>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <ul class="list-unstyled">
-                <li><a href="#">Point of sale</a></li>
-                <li><a href="#">Hardware</a></li>
-                <li><a href="#">Software</a></li>
+                <li><a href="{{ route('productsWoman') }}">Woman Collections</a></li>
+                <li><a href="{{ route('productsMen') }}">Men Collections</a></li>
+                <li><a href="{{ route('productsChildren') }}">Children Collections</a></li>
               </ul>
             </div>
           </div>
@@ -34,8 +28,8 @@
           <h3 class="footer-heading mb-4">Promo</h3>
           <a href="#" class="block-6">
             <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-            <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-            <p>Promo from  nuary 15 &mdash; 25, 2019</p>
+            <h3 class="font-weight-light  mb-0">Finding Your Perfect Costume</h3>
+            <p>Promo from  {{ date('m-Y') }}</p>
           </a>
         </div>
         <div class="col-md-6 col-lg-3">
@@ -63,7 +57,7 @@
         <div class="col-md-12">
           <p>
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+          Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>{{ date('m-Y') }} All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>

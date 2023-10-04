@@ -25,7 +25,17 @@ class PageController extends Controller
     public function cart(){
         return view('frontend.pages.cart');
     }
+    public function productsWoman(){
+        return view('frontend.pages.products');
+    } public function productsClidren(){
+        return view('frontend.pages.products');
+    } public function productsMen(){
+        return view('frontend.pages.products');
+    }
     public function checkout(){
         return view('frontend.pages.checkout');
+    }
+    public function selectedItems(){
+        return view('frontend.pages.products');
     }
 }

@@ -22,7 +22,6 @@
             <h2 class="text-black">How We Started</h2>
           </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius repellat, dicta at laboriosam, nemo exercitationem itaque eveniet architecto cumque, deleniti commodi molestias repellendus quos sequi hic fugiat asperiores illum. Atque, in, fuga excepturi corrupti error corporis aliquam unde nostrum quas.</p>
-          <p>Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in, quibusdam cumque recusandae, laudantium minima repellendus.</p>
 
         </div>
       </div>
@@ -47,7 +46,7 @@
                 <p class="block-38-subheading">CEO/Co-Founder</p>
               </div>
               <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+                <p></p>
               </div>
             </div>
           </div>
@@ -61,7 +60,7 @@
                 <p class="block-38-subheading">Co-Founder</p>
               </div>
               <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+                <p></p>
               </div>
             </div>
           </div>
@@ -75,7 +74,7 @@
                 <p class="block-38-subheading">Marketing</p>
               </div>
               <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+                <p></p>
               </div>
             </div>
           </div>
@@ -89,7 +88,7 @@
                 <p class="block-38-subheading">Sales Manager</p>
               </div>
               <div class="block-38-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
+                <p></p>
               </div>
             </div>
           </div>
@@ -99,37 +98,38 @@
   </div>
 
 
-  <div class="site-section site-section-sm site-blocks-1 border-0" data-aos="fade">
+  <div class="site-section site-section-sm site-blocks-1">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
-          <div class="icon mr-4 align-self-start">
-            <span class="icon-truck"></span>
-          </div>
-          <div class="text">
-            <h2 class="text-uppercase">Free Shipping</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-          </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
+                <div class="icon mr-4 align-self-start">
+                    <span class="icon-truck"></span>
+                </div>
+                <div class="text">
+                    <h2 class="text-uppercase">Free Shipping</h2>
+                    <p>Unlimited shopping and secure shipping service
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon mr-4 align-self-start">
+                    <span class="icon-refresh2"></span>
+                </div>
+                <div class="text">
+                    <h2 class="text-uppercase">Free Returns</h2>
+                    <p>Return option with in 30 days</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon mr-4 align-self-start">
+                    <span class="icon-help"></span>
+                </div>
+                <div class="text">
+                    <h2 class="text-uppercase">Customer Support</h2>
+                    <p>24/7 communication support</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon mr-4 align-self-start">
-            <span class="icon-refresh2"></span>
-          </div>
-          <div class="text">
-            <h2 class="text-uppercase">Free Returns</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon mr-4 align-self-start">
-            <span class="icon-help"></span>
-          </div>
-          <div class="text">
-            <h2 class="text-uppercase">Customer Support</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 @endsection
