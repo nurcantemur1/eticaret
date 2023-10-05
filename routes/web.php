@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\frontend\PageController;
 use App\Http\Controllers\frontend\PageHomeController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageHomeController::class, 'Home'])->name('Home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact/save', [AjaxController::class, 'contactsave'])->name('contact/save');
+
 Route::get('/products', [PageController::class, 'products'])->name('products');
 Route::get('/products/men', [PageController::class, 'productsMen'])->name('productsMen');
 Route::get('/products/woman', [PageController::class, 'productsWoman'])->name('productsWoman');
