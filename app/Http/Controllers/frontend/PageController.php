@@ -27,7 +27,7 @@ class PageController extends Controller
     }
     public function productsWoman(){
         return view('frontend.pages.products');
-    } public function productsClidren(){
+    } public function productsChildren(){
         return view('frontend.pages.products');
     } public function productsMen(){
         return view('frontend.pages.products');
@@ -38,4 +38,5 @@ class PageController extends Controller
     public function selectedItems(){
         return view('frontend.pages.products');
     }
+
 }
