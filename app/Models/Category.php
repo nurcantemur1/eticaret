@@ -14,7 +14,9 @@ class Category extends Model
         'slug',
         'sub_category'
     ];
-
+    public function items(){
+        return $this->hasMany(Product::class,'categoryId','id');
+    }
     public function sluggable(): array
     {
         return [

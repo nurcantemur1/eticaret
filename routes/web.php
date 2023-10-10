@@ -26,7 +26,7 @@ Route::get('/products/men', [PageController::class, 'productsMen'])->name('produ
 Route::get('/products/woman', [PageController::class, 'productsWoman'])->name('productsWoman');
 Route::get('/products/children', [PageController::class, 'productsChildren'])->name('productsChildren');
 
-Route::get('/product/productdetail', [PageController::class, 'productdetail'])->name('productdetail');
+Route::get('/productdetail/{id}', [PageController::class, 'productdetail'])->name('productdetail');
 Route::get('/thankyou', [PageController::class, 'thankyou'])->name('thankyou');
 Route::get('/cart', [PageController::class, 'cart'])->name('cart');
 Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
