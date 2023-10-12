@@ -22,9 +22,10 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact/save', [AjaxController::class, 'contactsave'])->name('contact/save');
 
 Route::get('/products', [PageController::class, 'products'])->name('products');
-Route::get('/products/men', [PageController::class, 'productsMen'])->name('productsMen');
-Route::get('/products/woman', [PageController::class, 'productsWoman'])->name('productsWoman');
-Route::get('/products/children', [PageController::class, 'productsChildren'])->name('productsChildren');
+
+Route::get('/Men/{slug?}', [PageController::class, 'products'])->name('productsMen');
+Route::get('/Woman/{slug?}', [PageController::class, 'products'])->name('productsWoman');
+Route::get('/Children/{slug?}', [PageController::class, 'products'])->name('productsChildren');
 
 Route::get('/productdetail/{id}', [PageController::class, 'productdetail'])->name('productdetail');
 Route::get('/thankyou', [PageController::class, 'thankyou'])->name('thankyou');

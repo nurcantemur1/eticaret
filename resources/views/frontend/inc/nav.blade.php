@@ -48,11 +48,11 @@
                             @foreach ($categories as $item)
                                 @if ($item->sub_category == null)
                                     <li class="has-children">
-                                        <a href="#">{{ $item->name }}</a>
+                                        <a href="{{route($item->slug)}}">{{ $item->name }}</a>
                                         <ul class="dropdown">
-                                            @foreach ($categories as $category)
-                                                @if ($category->sub_category == $item->id)
-                                                    <li><a href="#">{{ $category->name }}</a></li>
+                                            @foreach ($categories as $subcategory)
+                                                @if ($subcategory->sub_category == $item->id)
+                                                    <li><a href="{{$item->slug}}/{{ $subcategory->slug }}">{{ $subcategory->name }}</a></li>
                                                 @endif
                                             @endforeach
                                         </ul>

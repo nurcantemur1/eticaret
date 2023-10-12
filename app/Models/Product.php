@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function item(){
+    public function category(){
         return $this->hasOne(Category::class,'id','categoryId');
     }
 }

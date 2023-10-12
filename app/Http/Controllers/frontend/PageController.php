@@ -25,8 +25,10 @@ class PageController extends Controller
         $startPrice = $request->startPrice ?? null;
         $endPrice = $request->endPrice ?? null;
 
+        $order = $request->order ?? 'id';
+        $short = $request->short ?? 'desc';
 
-        $products = DB::table('products')->where(function ($result) use ($size, $color,$startPrice,$endPrice) {
+        $products = Product::where(function ($result) use ($size, $color, $startPrice, $endPrice) {
             if (!empty($size)) {
                 $result->where('size', $size);
             }
@@ -34,12 +36,24 @@ class PageController extends Controller
                 $result->where('color', $color);
             }
             if (!empty($startPrice) && $endPrice) {
-                $result->wherebetween('price', [$startPrice,$endPrice]);
+                $result->wherebetween('price', [$startPrice, $endPrice]);
             }
-        })->paginate(3);
-         $categories= Category::where('sub_category')->with('items')->get();
+        })->with('category:id,name');
 
-        return view('frontend.pages.products', compact('products','categories'));
+        // return $categoryWithProduct=Category::where('sub_category')->with('items')->get()->count();
+
+        $minprice = $products->min('price');
+        $maxprice = $products->max('price');
+        $sizeall =  DB::table('Products')->groupBy('size')->pluck('size')->toArray();
+        $colorall =  DB::table('Products')->groupBy('color')->pluck('color')->toArray();
+
+
+        $products = $products->orderBy($order,$short)->paginate(3);
+        //$categories= DB::table('Categories')->get();
+        $categories = Category::where('sub_category')->with('items')->get();
+
+        return view('frontend.pages.products', compact('products', 'categories', 'minprice', 'maxprice',
+        'sizeall', 'colorall'));
     }
     public function productdetail($id)
     {

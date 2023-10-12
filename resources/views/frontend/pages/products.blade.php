@@ -21,7 +21,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
 
                                         @foreach ($categories as $item)
-                                            <a class="dropdown-item" href="#">{{ $item->name }}</a>
+                                            <a class="dropdown-item" href="{{ route($item->slug) }}">{{ $item->name }}</a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -30,11 +30,11 @@
                                         id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                         <a class="dropdown-item" href="#">Relevance</a>
-                                        <a class="dropdown-item" href="#">Name, A to Z</a>
-                                        <a class="dropdown-item" href="#">Name, Z to A</a>
+                                        <a class="dropdown-item" href="#" data-list="sortedList">Name, A to Z</a>
+                                        <a class="dropdown-item" href="#" data-list="reverseList">Name, Z to A</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Price, low to high</a>
-                                        <a class="dropdown-item" href="#">Price, high to low</a>
+                                        <a class="dropdown-item" href="#"  data-list="lowtoHigh">Price, low to high</a>
+                                        <a class="dropdown-item" href="#"  data-list="hightoLow">Price, high to low</a>
                                     </div>
                                 </div>
                             </div>
@@ -67,17 +67,7 @@
                     <div class="row" data-aos="fade-up">
                         <div class="col-md-12 text-center">
                             {{ $products->withQueryString()->links('pagination::custom') }}
-                            {{-- <div class="site-block-27">
-                                <ul>
-                                    <li><a href="#">&lt;</a></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&gt;</a></li>
-                                </ul>
-                            </div> --}}
+
                         </div>
                     </div>
                 </div>
@@ -87,14 +77,27 @@
                         <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                         <ul class="list-unstyled mb-0">
                             @foreach ($categories as $item)
-                            <li class="mb-1"><a href="#" class="d-flex"><span>{{ $item->name }}</span> <span
-                                class="text-black ml-auto">{{ $item->count() }}</span></a></li>
-                        @endforeach
+                                @if ($item->sub_category == null)
+                                    <li class="mb-1"><a href="#" class="d-flex"><span>{{ $item->name }} Collection</span>
+                                @endif
+                                @if ($item->sub_category == $item->id)
+
+                                    <span class="text-black ml-auto"> {{ $item->sub_category->count() }}</span>
+                                @endif
+
+                                </a></li>
+                            @endforeach
 
                         </ul>
                     </div>
 
                     <div class="border p-4 rounded mb-4">
+                        {{-- <div class="mb-4">
+                            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
+                            <div id="slider-range" class="border-primary"></div>
+                            <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white"
+                                disabled="" />
+                        </div> --}}
                         <div class="mb-4">
                             <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
                             <div id="slider-range" class="border-primary"></div>
@@ -104,38 +107,26 @@
 
                         <div class="mb-4">
                             <h3 class="mb-3 h6 text-uppercase text-black d-block">Size</h3>
-                            <label for="s_sm" class="d-flex">
-                                <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span class="text-black">Small
-                                    (2,319)</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="s_md" class="mr-2 mt-1"> <span class="text-black">Medium
-                                    (1,282)</span>
-                            </label>
-                            <label for="s_lg" class="d-flex">
-                                <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span class="text-black">Large
-                                    (1,392)</span>
-                            </label>
+                            @foreach ($sizeall as $item)
+                                <label for="s_sm" class="d-flex">
+                                    <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span
+                                        class="text-black">{{ $item }}
+                                        (2,319)
+                                    </span>
+                                </label>
+                            @endforeach
+
                         </div>
 
                         <div class="mb-4">
                             <h3 class="mb-3 h6 text-uppercase text-black d-block">Color</h3>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">Red (2,429)</span>
-                            </a>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-success color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">Green (2,298)</span>
-                            </a>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">Blue (1,075)</span>
-                            </a>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">Purple (1,075)</span>
-                            </a>
+                            @foreach ($colorall as $item)
+                                <a href="#" class="d-flex color-item align-items-center">
+                                    <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span
+                                        class="text-black">{{ $item }}(2,429)</span>
+                                </a>
+                            @endforeach
+
                         </div>
 
                     </div>
@@ -151,40 +142,24 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                                <a class="block-2-item" href="#">
-                                    <figure class="image">
-                                        <img src="{{ asset('/') }}images/women.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <span class="text-uppercase">Collections</span>
-                                        <h3>Women</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                                <a class="block-2-item" href="#">
-                                    <figure class="image">
-                                        <img src="{{ asset('/') }}images/children.jpg" alt=""
-                                            class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <span class="text-uppercase">Collections</span>
-                                        <h3>Children</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                                <a class="block-2-item" href="#">
-                                    <figure class="image">
-                                        <img src="{{ asset('/') }}images/men.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <span class="text-uppercase">Collections</span>
-                                        <h3>Men</h3>
-                                    </div>
-                                </a>
-                            </div>
+
+                            @foreach ($categories as $item)
+                                <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
+                                    <a class="block-2-item" href={{ route($item->slug) }}>
+                                        <figure class="image">
+                                            <img src="{{ asset('/') }}{{ $item->image }}" alt=""
+                                                class="img-fluid">
+                                        </figure>
+                                        <div class="text">
+                                            @if ($item->sub_category == null)
+                                                <h4><span class="text-uppercase">{{ $item->name }} Collection</span></h4>
+                                            @endif
+
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+
                         </div>
 
                     </div>
@@ -193,4 +168,11 @@
 
         </div>
     </div>
+@endsection
+
+@section('customjs')
+    <script>
+        var minprice = "{{ $minprice }}";
+        var maxprice = "{{ $maxprice }}";
+    </script>
 @endsection
