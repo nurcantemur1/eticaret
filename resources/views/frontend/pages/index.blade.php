@@ -1,6 +1,11 @@
 @extends('frontend.layout.layout')
 
 @section('content')
+
+
+<div>
+
+</div>
     <div class="site-blocks-cover" style="background-image: url(images/hero_1.jpg)" data-aos="fade">
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
@@ -56,7 +61,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="{{ route('productsWoman') }}">
+                    <a class="block-2-item" href="{{ route('Woman') }}">
                         <figure class="image">
                             <img src="images/women.jpg" alt="" class="img-fluid">
                         </figure>
@@ -67,7 +72,7 @@
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="{{ route('productsChildren') }}">
+                    <a class="block-2-item" href="{{ route('Children') }}">
                         <figure class="image">
                             <img src="images/children.jpg" alt="" class="img-fluid">
                         </figure>
@@ -78,7 +83,7 @@
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="{{ route('productsMen') }}">
+                    <a class="block-2-item" href="{{ route('Men') }}">
                         <figure class="image">
                             <img src="images/men.jpg" alt="" class="img-fluid">
                         </figure>

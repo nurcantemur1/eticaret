@@ -17,9 +17,9 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <ul class="list-unstyled">
-                <li><a href="{{ route('productsWoman') }}">Woman Collections</a></li>
-                <li><a href="{{ route('productsMen') }}">Men Collections</a></li>
-                <li><a href="{{ route('productsChildren') }}">Children Collections</a></li>
+                <li><a href="{{ route('Woman') }}">Woman Collections</a></li>
+                <li><a href="{{ route('Men') }}">Men Collections</a></li>
+                <li><a href="{{ route('Children') }}">Children Collections</a></li>
               </ul>
             </div>
           </div>

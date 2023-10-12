@@ -50,9 +50,9 @@ class PageController extends Controller
 
         $products = $products->orderBy($order,$short)->paginate(3);
         //$categories= DB::table('Categories')->get();
-        $categories = Category::where('sub_category')->with('items')->get();
+       // $categories = Category::where('sub_category')->with('items')->get();
 
-        return view('frontend.pages.products', compact('products', 'categories', 'minprice', 'maxprice',
+        return view('frontend.pages.products', compact('products', 'minprice', 'maxprice',
         'sizeall', 'colorall'));
     }
     public function productdetail($id)
@@ -68,15 +68,15 @@ class PageController extends Controller
     {
         return view('frontend.pages.cart');
     }
-    public function productsWoman()
+    public function Woman()
     {
         return view('frontend.pages.products');
     }
-    public function productsChildren()
+    public function Children()
     {
         return view('frontend.pages.products');
     }
-    public function productsMen()
+    public function Men()
     {
         return view('frontend.pages.products');
     }

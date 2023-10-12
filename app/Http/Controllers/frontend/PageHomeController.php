@@ -16,7 +16,6 @@ class PageHomeController extends Controller
    public function Home(){
      $slider = Slider::where('status','1')->first();
     // $slider
-    $categories = Category::get();
-    return view('frontend.pages.index',compact('slider','categories'));
+    return view('frontend.pages.index',compact('slider'));
    }
 }
