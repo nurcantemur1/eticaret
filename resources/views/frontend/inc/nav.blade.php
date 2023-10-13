@@ -45,19 +45,19 @@
                     <a href="#">Category</a>
                     <ul class="dropdown">
                         @if (!@empty($categories) && $categories->count() > 0)
-                            @foreach ($categories as $item)
-                                @if ($item->sub_category == null)
-                                    <li class="has-children">
-                                        <a href="{{route($item->slug)}}">{{ $item->name }}</a>
-                                        <ul class="dropdown">
-                                            @foreach ($categories as $subcategory)
-                                                @if ($subcategory->sub_category == $item->id)
-                                                    <li><a href="{{$item->slug}}/{{ $subcategory->slug }}">{{ $subcategory->name }}</a></li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                @endif
+                            @foreach ($categories->where('sub_category', null) as $item)
+                                <li class="has-children">
+                                    <a href="{{ route($item->slug) }}">{{ $item->name }}</a>
+                                    <ul class="dropdown">
+                                        @foreach ($categories as $subcategory)
+                                            @if ($subcategory->sub_category == $item->id)
+                                                <li><a
+                                                        href="{{ $item->slug }}/{{ $subcategory->slug }}">{{ $subcategory->name }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </li>
                             @endforeach
                         @endif
                     </ul>
