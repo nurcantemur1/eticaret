@@ -20,10 +20,8 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
 
-                                        @foreach ($categories->where('sub_category',null) as $item)
-                                                <a class="dropdown-item"
-                                                    href="{{ route($item->slug) }}">{{ $item->name }}</a>
-
+                                        @foreach ($categories->where('sub_category', null) as $item)
+                                            <a class="dropdown-item" href="{{ route($item->slug) }}">{{ $item->name }}</a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -78,16 +76,15 @@
                     <div class="border p-4 rounded mb-4">
                         <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                         <ul class="list-unstyled mb-0">
-                            @foreach ($categories->where('sub_category',null) as $item)
-                            <li class="mb-1"><a href={{ route($item->slug) }} class="d-flex"><span>{{ $item->name }}
-                                Collection</span>
-
-                                @if ($item->sub_category == $item->id)
-                                    <span class="text-black ml-auto"> {{ $item->sub_category->count() }}</span>
-                                @endif
-
-                                </a></li>
+                            @foreach ($categories->where('sub_category', null) as $item)
+                                <li class="mb-1">
+                                    <a href={{ route($item->slug) }} class="d-flex"><span>{{ $item->name }}
+                                            Collection</span>
+                                        <span class="text-black ml-auto">55</span>
+                                    </a>
+                                </li>
                             @endforeach
+
 
                         </ul>
                     </div>
@@ -144,20 +141,20 @@
                         </div>
                         <div class="row">
 
-                            @foreach ($categories->where('sub_category',null) as $item)
+                            @foreach ($categories->where('sub_category', null) as $item)
                                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                                        <a class="block-2-item" href={{ route($item->slug) }}>
-                                            <figure class="image">
-                                                <img src="{{ asset('/') }}{{ $item->image }}" alt=""
-                                                    class="img-fluid">
-                                            </figure>
-                                            <div class="text">
-                                                <h4><span class="text-uppercase">{{ $item->name }} Collection</span>
-                                                </h4>
+                                    <a class="block-2-item" href={{ route($item->slug) }}>
+                                        <figure class="image">
+                                            <img src="{{ asset('/') }}{{ $item->image }}" alt=""
+                                                class="img-fluid">
+                                        </figure>
+                                        <div class="text">
+                                            <h4><span class="text-uppercase">{{ $item->name }} Collection</span>
+                                            </h4>
 
 
-                                            </div>
-                                        </a>
+                                        </div>
+                                    </a>
                                 </div>
                             @endforeach
 

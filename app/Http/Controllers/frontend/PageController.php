@@ -71,10 +71,7 @@ class PageController extends Controller
     {
         return view('frontend.pages.thankyou');
     }
-    public function cart()
-    {
-        return view('frontend.pages.cart');
-    }
+
     public function Woman()
     {
         return view('frontend.pages.products');

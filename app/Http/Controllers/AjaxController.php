@@ -6,6 +6,7 @@ use App\Http\Requests\ContentFormRequest;
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class AjaxController extends Controller
@@ -19,4 +20,9 @@ class AjaxController extends Controller
         Mail::to('nurcantmr12@gmail.com')->send(new ContactMail($data));
         return back()->with(['message'=>'sent Successfully!']);
     }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('Home');
+    }
+
 }
