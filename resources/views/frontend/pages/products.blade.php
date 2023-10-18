@@ -21,7 +21,8 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
 
                                         @foreach ($categories->where('sub_category', null) as $item)
-                                            <a class="dropdown-item" href="{{ route($item->slug) }}">{{ $item->name }}</a>
+                                            <a class="dropdown-item"
+                                                href="{{ route($item->slug) }}">{{ $item->name }}{{ $cat_items}}</a>
                                         @endforeach
                                     </div>
                                 </div>

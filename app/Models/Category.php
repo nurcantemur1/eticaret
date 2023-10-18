@@ -18,6 +18,11 @@ class Category extends Model
     public function items(){
         return $this->hasMany(Product::class,'categoryId','id');
     }
+    public function categoryitems(){
+        $total = $this->items()->count();
+        return $total;
+    }
+
     public function sluggable(): array
     {
         return [

@@ -54,6 +54,7 @@ class PageController extends Controller
         $colorall =  DB::table('Products')->groupBy('color')->pluck('color')->toArray();
 
 
+
         $products = $products->orderBy($order,$short)->paginate(12);
 
 

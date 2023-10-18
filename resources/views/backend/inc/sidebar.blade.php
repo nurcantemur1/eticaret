@@ -7,6 +7,18 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{{ route('panel/Slider/Index') }}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Slider</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('panel/Slider/Index') }}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Category</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="icon-layout menu-icon"></i>
           <span class="menu-title">UI Elements</span>

@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Skydash Admin</title>
+    <link href="{{ asset('backend/css/bootstrap-toggle.min.css') }}" rel="stylesheet">
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('backend') }}/vendors/feather/feather.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/vendors/ti-icons/css/themify-icons.css">
@@ -20,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('backend') }}/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('backend') }}/images/favicon.png" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 </head>
 
 <body>
@@ -255,6 +258,11 @@
     <script src="{{ asset('backend') }}/js/dashboard.js"></script>
     <script src="{{ asset('backend') }}/js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
+    <script src="{{ asset('backend') }}/js/file-upload.js"></script>
+    <script src="{{ asset('backend') }}/js/typeahead.js"></script>
+    <script src="{{ asset('backend') }}/js/select2.js"></script>
+    <script src="{{ asset('backend/js/bootstrap-toggle.min.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 </body>
 
 </html>

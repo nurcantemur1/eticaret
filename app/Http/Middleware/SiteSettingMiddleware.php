@@ -18,8 +18,8 @@ class SiteSettingMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $categories =DB::table('Categories')->get();
-
-        view()->share(['categories'=>$categories]);
+        $cat_items = Category::where('sub_category',null)->with('items')->get();
+        view()->share(['categories'=>$categories,'cat_items'=>$cat_items]);
 
         return $next($request);
     }
