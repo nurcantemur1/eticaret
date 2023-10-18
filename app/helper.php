@@ -30,5 +30,13 @@ if ( !function_exists('imageupload') ){
         return $imageurl;
     }
 }
+if ( !function_exists('openfile') ){
+
+function openfile($dosyayolu,$izin=0777){
+    if(!file_exists($dosyayolu)){
+        mkdir($dosyayolu,$izin, true);
+    }
+}
+}
 
 ?>

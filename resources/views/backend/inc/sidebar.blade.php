@@ -1,7 +1,8 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
+
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('panel/Index') }}">
           <i class="icon-grid menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -13,9 +14,15 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('panel/Slider/Index') }}">
+        <a class="nav-link" href="{{ route('panel/category/Index') }}">
           <i class="icon-paper menu-icon"></i>
           <span class="menu-title">Category</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('panel/contact/Index') }}">
+          <i class="icon-paper menu-icon"></i>
+          <span class="menu-title">Contact Message</span>
         </a>
       </li>
       <li class="nav-item">

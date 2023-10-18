@@ -45,6 +45,9 @@ Route::group(['middleware' => 'sitesetting'], function () {
     Auth::routes();
     Route::get('/logout', [AjaxController::class, 'logout'])->name('logout');
 
+    Route::post('/cart/coupon', [CartController::class, 'couponcheck'])->name('coupon/check');
+
+
 });
 
 

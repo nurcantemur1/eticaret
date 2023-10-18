@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\SliderController;
 use Illuminate\Support\Facades\Route;
@@ -26,13 +28,17 @@ Route::group(['middleware' => ['panelsetting','auth'],'prefix'=>'panel','as'=>'p
 
     Route::post('/slider/Delete/{id}', [SliderController::class, 'Delete'])->name('Slider/Delete');
 
-    Route::get('/category', [SliderController::class, 'Index'])->name('category/Index');
-    Route::get('/category/Create', [SliderController::class, 'Create'])->name('category/Create');
-    Route::post('/category/Add', [SliderController::class, 'Add'])->name('category/Add');
 
-    Route::post('/category/Edit/{id}', [SliderController::class, 'Edit'])->name('category/Edit');
-    Route::put('/category/Update/{id}', [SliderController::class, 'Update'])->name('category/Update');
+    Route::get('/category', [CategoryController::class, 'Index'])->name('category/Index');
+    Route::get('/category/Create', [CategoryController::class, 'Create'])->name('category/Create');
+    Route::post('/category/Add', [CategoryController::class, 'Add'])->name('category/Add');
 
-    Route::post('/category/Delete/{id}', [SliderController::class, 'Delete'])->name('category/Delete');
+    Route::post('/category/Edit/{id}', [CategoryController::class, 'Edit'])->name('category/Edit');
+    Route::put('/category/Update/{id}', [CategoryController::class, 'Update'])->name('category/Update');
+
+    Route::post('/category/Delete/{id}', [CategoryController::class, 'Delete'])->name('category/Delete');
+
+    Route::get('/contact', [ContactController::class, 'Index'])->name('contact/Index');
+
 
 });

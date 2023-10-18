@@ -49,7 +49,7 @@ class PageController extends Controller
 
 
         $minprice = $products->min('price');
-        $maxprice = $products->max('price');
+        $maxprice = Product::max('price');
         $sizeall =  DB::table('Products')->groupBy('size')->pluck('size')->toArray();
         $colorall =  DB::table('Products')->groupBy('color')->pluck('color')->toArray();
 
